@@ -5,6 +5,7 @@
         <feature>cdi-2.0</feature>
         <feature>mpMetrics-3.0</feature>
         <feature>mpConfig-2.0</feature>
+        <feature>jdbc-4.3</feature>
     </featureManager>
 
     <webApplication location="${artifactId}.war" contextRoot="/"/>
@@ -14,6 +15,15 @@
     <!-- tag::logging[] -->
     <logging traceSpecification="com.ibm.ws.microprofile.health.*=all" />
     <!-- end::logging[] -->
+
+    <library id="jdbcLib">
+        <fileset dir="${shared.config.dir}/lib" includes="*.jar"/>
+    </library>
+
+    <dataSource jndiName="jdbc/myDB">
+        <jdbcDriver libraryRef="jdbcLib"/>
+        <properties.derby.embedded databaseName="memory:myDB" createDatabase="create"/>
+    </dataSource>
 
     <httpEndpoint host="*" httpPort="${default.http.port}" 
         httpsPort="${default.https.port}" id="defaultHttpEndpoint"/>
