@@ -82,7 +82,7 @@
                             <artifactId>derby</artifactId>
                             <version>10.14.2.0</version>
                         </dependency>
-                        <location>${project.build.directory}/liberty/wlp/usr/shared/lib/</location>
+                        <location>${project.build.directory}/liberty/wlp/usr/shared/resources/lib/</location>
                     </copyDependencies>
                 </configuration>
             </plugin>

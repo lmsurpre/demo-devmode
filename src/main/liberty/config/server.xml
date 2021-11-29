@@ -17,7 +17,7 @@
     <!-- end::logging[] -->
 
     <library id="jdbcLib">
-        <fileset dir="${shared.config.dir}/lib" includes="*.jar"/>
+        <fileset dir="${shared.resource.dir}/lib" includes="*.jar"/>
     </library>
 
     <dataSource jndiName="jdbc/myDB">
